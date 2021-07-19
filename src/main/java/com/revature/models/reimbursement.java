@@ -9,7 +9,7 @@ public class reimbursement {
 	private int reimamount;
 	private Time reim_submittedTime;
 	private Time reim_resolved;
-	private String reim_descriptionString;
+	private String reim_description;
 	private int reimb_author;
 	private int reim_resolver;
 	private int reim_status_id;
@@ -32,7 +32,7 @@ public class reimbursement {
 		this.reimamount = reimamount;
 		this.reim_submittedTime = reim_submittedTime;
 		this.reim_resolved = reim_resolved;
-		this.reim_descriptionString = reim_descriptionString;
+		this.reim_description = reim_descriptionString;
 		this.reimb_author = reimb_author;
 		this.reim_resolver = reim_resolver;
 		this.reim_status_id = reim_status_id;
@@ -51,7 +51,7 @@ public class reimbursement {
 		this.reimamount = reimamount;
 		this.reim_submittedTime = reim_submittedTime;
 		this.reim_resolved = reim_resolved;
-		this.reim_descriptionString = reim_descriptionString;
+		this.reim_description = reim_descriptionString;
 		this.reimb_author = reimb_author;
 		this.reim_resolver = reim_resolver;
 		this.reim_status_id = reim_status_id;
@@ -68,7 +68,7 @@ public class reimbursement {
 	public String toString() {
 		return "reimbursement [reim_id=" + reim_id + ", reimamount=" + reimamount + ", reim_submittedTime="
 				+ reim_submittedTime + ", reim_resolved=" + reim_resolved + ", reim_descriptionString="
-				+ reim_descriptionString + ", reimb_author=" + reimb_author + ", reim_resolver=" + reim_resolver
+				+ reim_description + ", reimb_author=" + reimb_author + ", reim_resolver=" + reim_resolver
 				+ ", reim_status_id=" + reim_status_id + ", reim_type_id=" + reim_type_id + ", users_fk_auth="
 				+ users_fk_auth + ", users_fk_reslvr=" + users_fk_reslvr + ", reimbursement_status_fk="
 				+ reimbursement_status_fk + ", reimbursement_type_fk=" + reimbursement_type_fk + ", reimbursement_pk="
@@ -78,7 +78,7 @@ public class reimbursement {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((reim_descriptionString == null) ? 0 : reim_descriptionString.hashCode());
+		result = prime * result + ((reim_description == null) ? 0 : reim_description.hashCode());
 		result = prime * result + reim_id;
 		result = prime * result + ((reim_resolved == null) ? 0 : reim_resolved.hashCode());
 		result = prime * result + reim_resolver;
@@ -103,10 +103,10 @@ public class reimbursement {
 		if (getClass() != obj.getClass())
 			return false;
 		reimbursement other = (reimbursement) obj;
-		if (reim_descriptionString == null) {
-			if (other.reim_descriptionString != null)
+		if (reim_description == null) {
+			if (other.reim_description != null)
 				return false;
-		} else if (!reim_descriptionString.equals(other.reim_descriptionString))
+		} else if (!reim_description.equals(other.reim_description))
 			return false;
 		if (reim_id != other.reim_id)
 			return false;
@@ -167,10 +167,10 @@ public class reimbursement {
 		this.reim_resolved = reim_resolved;
 	}
 	public String getReim_descriptionString() {
-		return reim_descriptionString;
+		return reim_description;
 	}
 	public void setReim_descriptionString(String reim_descriptionString) {
-		this.reim_descriptionString = reim_descriptionString;
+		this.reim_description = reim_descriptionString;
 	}
 	public int getReimb_author() {
 		return reimb_author;

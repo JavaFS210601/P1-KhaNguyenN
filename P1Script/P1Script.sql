@@ -29,6 +29,8 @@ reimbursement_type_fk int references reimbursement_type(reimb_type_id)
 
 );
 
+insert into reimbursement (reim_id, reim_amount, reimb_description) values (20 ,150, 'food' );
+
 create table reimbursement_status(
 
 reimb_status_id int not null,
