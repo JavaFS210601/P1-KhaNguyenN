@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.controllers.LoginController;
 import com.revature.controllers.ManagerController;
+import com.revature.services.LoginService;
 import com.revature.controllers.EmployeeController;
 
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
@@ -18,9 +19,13 @@ public class MasterServlet extends HttpServlet {
 	private EmployeeController employeeController = new EmployeeController();
 	private ManagerController mangController = new ManagerController();
 	private LoginController lc = new LoginController();
-	
+	private LoginService ls = new LoginService();
+	private int thisID;
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
+		//returing a value from login service then using it to determine if its management or employee
+		ls.returningID(thisID);
+		System.out.print(ls.returningID(thisID));
 		res.setContentType("application/json"); //set the content of our response object to be JSON
 		
 		//by default, Tomcat will send back a successful status code (200) if a request gets handled.
@@ -38,22 +43,21 @@ public class MasterServlet extends HttpServlet {
 		
 		switch(URI) {
 		
-		case "avengers": //adding functionality to make the user have to log in before accessing all avengers
-		
-			
-			//if(req.getSession(false) != null) { //if there is an active Session (which means the user is logged in)
-				//ac.getAllAvengers(res); //doGet all avengers
-		//	} else {
-		//		res.setStatus(403); //forbidden - they aren't logged in so they can't get the goods
-				
-		//	}
-			
+		case "getReimbursements":
+			employeeController.viewPastTickets(res);		
 			break;
-			
+		case "viewPending":
+			employeeController.viewPending(res);
+			break;
+		case "submitReimbursements":
+			employeeController.submitReimbursements(res, req);
+			break;
+		case "resolve":
+			mangController.resolveTicket(req, res);
+			break;
 		case "login": 
-			
 			lc.login(req, res);
-			break;
+			break;	
 			
 		}
 		

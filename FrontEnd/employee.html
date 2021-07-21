@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--I just googled "bootstrap cdn" and this ^^^ was in the second link under "CSS"-->
+    <!--Thanks to bootstrap, we can style elements using the class attribute-->
+</head>
+<body>
+    <h1>Employee's Section</h1>
+    <div class="container" id="fullcontainer">
+        <!--We need a div called container to hold all the bootstrap stuff-->
+        <!--only to be added after adding login functionality in back end-->
+        <!--only to be added after adding login functionality in back end-->
+        <div id="table-row" class="row">
+        <!--Then we need rows inside the container to organize it-->
+            <table id="avengerTable" class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Amount</th>
+                        <th>Submitted</th>
+                        <th>Resolved</th>
+                        <th>Description</th>
+                        <th>Author</th>
+                        <th>Resolver</th>
+                        <th>Status_ID</th>
+                        <th>Type_ID</th>
+                    </tr>
+                </thead>
+                <tbody id="reimbursementsBody">
+                    <!--We're going to leave the table body blank!-->
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <button id="getReimbursements" class="btn btn-success">View Past Tickets</button> 
+        <button id="viewPending" class="btn btn-success">View Pending</button> 
+
+        <br>
+        <br>
+    
+
+        <div>
+            <h2>Submit Reimbursement</h2>
+            <input id="idnumber" type="number" placeholder="Type_ID" class="col-sm-4 form-control">
+            <input id="reimbursementsAmount" type="number" placeholder="Reimbursement Amount" class="col-sm-4 form-control"> 
+            <input id="Description" type="text" placeholder ="Description - Ex (Food, Lodging, Travel, Other)" class="col-sm-4 formcontrol">
+            <button id="submitReimbursements" class="btn btn-success">Submit</button> 
+            <br>
+            <button id="log-out" class = "btn btn-success">Log Out</button>
+        </div>
+    </div>
+    <script src="employee.js"></script>
+</body>
+</html>

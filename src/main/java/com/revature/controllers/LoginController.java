@@ -50,7 +50,7 @@ public class LoginController {
 			
 			//control flow to determine what happens in the event of a successful/unsuccessful login--------
 			
-			if(ls.login(lDTO.username, lDTO.password)) { //if the username/password sent to the service are valid...
+			if(ls.login(lDTO.username, lDTO.password, lDTO.id)) { //if the username/password sent to the service are valid...
 				
 				HttpSession ses = req.getSession(); //return a Session to hold user info (if one doesn't exist yet)
 				//remember, sessions are how you remember the different users on the client
@@ -71,7 +71,8 @@ public class LoginController {
 				
 		
 				res.setStatus(200); //because login was successful
-				res.getWriter().print("Hi Login was successful"); //we won't see this message anywhere but postman
+				//might not need it 
+				//res.getWriter().print("Hi Login was successful"); //we won't see this message anywhere but postman
 				
 			} else {
 				HttpSession ses = req.getSession(false); //this will only return a session if one is already active

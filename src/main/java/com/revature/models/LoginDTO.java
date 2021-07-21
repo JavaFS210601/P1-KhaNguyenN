@@ -11,7 +11,8 @@ public class LoginDTO {
 	//our LoginDTO is going to store the username/password sent in by the user
 	public String username;
 	public String password;
-
+	public int id;
+	//might have to remove our id if it doesnt work
 	
 	//then I just want two constructors so we can instantiate LoginDTO objects
 	
@@ -21,10 +22,11 @@ public class LoginDTO {
 	}
 
 
-	public LoginDTO(String username, String password) {
+	public LoginDTO(String username, String password, int id) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.id = id;
 	}
 	
 	

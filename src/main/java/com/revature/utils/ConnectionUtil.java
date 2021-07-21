@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.revature.daos.ManagerDAO;
+//import com.revature.daos.ManagerDAO;
 import com.revature.daos.EmployeeDAO;
 //This Class contains the logic that gets a connection to our database
 //It will have a method called getConnection() that will return a Connection object
@@ -13,7 +13,7 @@ public class ConnectionUtil {
 
 	//public static ReimbursementDAO reimbursementDAO = new ReimbursementDAO();
 	
-	public static ManagerDAO managerDAO = new ManagerDAO();
+	//public static ManagerDAO managerDAO = new ManagerDAO();
 	public static EmployeeDAO employeeDAO = new EmployeeDAO();
 	public static void main(String[] args) {
 			
@@ -43,7 +43,7 @@ public class ConnectionUtil {
 		
 //		//We need to provide our database credentials
 //		//We'll hardcode them for now, but we'll see how to hide this username/password in environment variables
-		String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=P1script";
+		String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=P1";
 		String username = "postgres";
 		String password = "password"; //this will be whatever password you set in postgres (or RDS if you're using that)
 //									  //hopefully you just left it as password...
